@@ -73,14 +73,9 @@ func compareProportion(this js.Value, args []js.Value) interface{} {
   return obj
 }
 
-func sayHi(this js.Value, args []js.Value) interface{} {
-	fmt.Println("Hi!")
-  return nil
-}
-
 func registerCallbacks() {
   js.Global().Set("computeSampleProportion", js.FuncOf(sampleProportion))
-	js.Global().Set("sayHi", js.FuncOf(sayHi))
+  js.Global().Set("compareProportions", js.FuncOf(compareProportion))
 }
 
 func main() {
